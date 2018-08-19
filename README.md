@@ -1,4 +1,5 @@
 # UML-HRTech
+#Example
 1: Association
 - Customer (1) - association - Entitlement(0 or more)
 - Customer - association - BatchCode
