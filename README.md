@@ -3,8 +3,8 @@
 1: Association
 - Customer (1) - association - Entitlement(0 or more)
 - Customer - association - BatchCode
-- Customer <- Aggreciation - Company
-- Customer <- Aggreciation - Individual
+- Customer <- Aggreciation - Companyv( an abstract Class)
+- Customer <- Aggreciation - Individual ( an abstract class)
 
 2. Entitlement
 - Entitlement (0 or more) - association - Produce
