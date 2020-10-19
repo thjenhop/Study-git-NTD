@@ -16,7 +16,7 @@ class CreateDistrictsTable extends Migration
         Schema::create('districts', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false)->comment('Quận/Huyện');
-            $table->enum('prefix', ['', 'Quận', 'Huyện'])->nullable(false)->default('');
+            $table->string('prefix')->nullable(false)->default('');
             $table->unsignedInteger('province_id')->nullable(false);
             $table->timestamps();
         });

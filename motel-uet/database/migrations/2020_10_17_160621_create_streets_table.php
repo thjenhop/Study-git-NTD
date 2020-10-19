@@ -16,7 +16,7 @@ class CreateStreetsTable extends Migration
         Schema::create('streets', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false)->comment('Tên phố');
-            $table->enum('prefix', ['Đường', 'Phố']);
+            $table->string('prefix');
             $table->unsignedInteger('province_id')->nullable(false);
             $table->unsignedInteger('district_id')->nullable(false);
             $table->timestamps();

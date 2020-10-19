@@ -16,7 +16,7 @@ class CreateWardsTable extends Migration
         Schema::create('wards', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false)->comment("Xã, phường, thị trấn");
-            $table->enum('prefix', ['Xã', 'Phường', 'Thị trấn']);
+            $table->string('prefix');
             $table->unsignedInteger('province_id')->nullable(false);
             $table->unsignedInteger('district_id')->nullable(false);
             $table->timestamps();
