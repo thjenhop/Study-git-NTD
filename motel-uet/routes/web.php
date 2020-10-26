@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AddressController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/address/province', [AddressController::class, 'getAllProvince']);
+Route::get('/address/district', [AddressController::class, 'getAllDistrictByProvinceId']);
+Route::get('/address/ward', [AddressController::class, 'getAllWardByDistrictId']);
+Route::get('/address/street', [AddressController::class, 'getAllStreetByDistrictId']);
+
+
