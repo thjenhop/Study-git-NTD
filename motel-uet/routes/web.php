@@ -17,6 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/address/province', [AddressController::class, 'getAllProvince']);
+Route::get('/address/district', [AddressController::class, 'getAllDistrictByProvinceId']);
+Route::get('/address/ward', [AddressController::class, 'getAllWardByDistrictId']);
+Route::get('/address/street', [AddressController::class, 'getAllStreetByDistrictId']);
+
+
+
 
 Route::resource('post', 'PostController');
 
