@@ -15,5 +15,9 @@ class GroupUserSeeder extends Seeder
             ['name' => 'Admin', 'group_name' => 'admin'],
             ['name' => 'User', 'group_name' => 'user']
         ]);
+        DB::table('users')->insert([
+            ['name' => 'Admin', 'group_id' => '1'],
+            ['name' => 'hopdt', 'group_id' => '2']
+        ]);
     }
 }

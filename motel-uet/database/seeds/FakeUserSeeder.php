@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User;
 
 class FakeUserSeeder extends Seeder
 {
@@ -11,6 +12,7 @@ class FakeUserSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $numberRecord = 20;
+        factory(User::class, $numberRecord)->create();
     }
 }
