@@ -14,8 +14,8 @@ class AddColumnPriorityAndPriceToTablePost extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->unsignedTinyInteger('priority_post')->nullable(false)->default(0)->comment('Độ ưu tiên của bài viết');
-            $table->unsignedDouble('post_price', 15, 3)->nullable(false)->default(0)->comment('Gía đăng bài viết');
+//            $table->unsignedTinyInteger('priority_post')->nullable(false)->default(0)->comment('Độ ưu tiên của bài viết');
+//            $table->unsignedDouble('post_price', 15, 3)->nullable(false)->default(0)->comment('Gía đăng bài viết');
         });
     }
 
