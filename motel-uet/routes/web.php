@@ -24,7 +24,7 @@ Route::get('/address/street', [AddressController::class, 'getAllStreetByDistrict
 
 
 
-
-Route::resource('post', 'PostController');
+Route::get('/post/search', 'PostController@searchPost');
+Route::resource('/post', 'PostController');
 
 //Route::resource('post', 'PostController');

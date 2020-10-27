@@ -5,62 +5,54 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 
+
 class PostController extends Controller
 {
-    public function searchPosts () {
+    public function index ()
+    {
+        $data = Post::where('is_delete', 0)->where('in_duration', 1)->where('is_booked', 0)->limit(10)->orderBy('service_id', 'desc')->get();
+        return view('pages.test', ['data' => $data]);
+    }
+    public function searchPost () {
         // post in_duration (true),
         $request = '';
-        $searchOption = '';
-        if (isset($searchOption['category_id'])) {
-         // search by categoryId
-        } else {
-        // get all post
-        }
-        if (isset($searchOption['province_id'])) {
-            // search by provinceId
-        } else {
-            // all post provin
-        }
+        $categoryId = '';
+        $provinceId = '';
+        $districtId = '';
+        $streetId = '';
+        $wardId = '';
+        $priceMin = '';
+        $priceMax = '';
+        $arrSearch = [
+            [
+                'column' => 'category_id',
+                'value' => $categoryId
+            ],
+            [
+                'column' => 'province_id',
+                'value' => $provinceId
+            ],
+            [
+                'column' => 'district_id',
+                'value' => $districtId
+            ],
+            [
+                'column' => 'street_id',
+                'value' => $streetId
+            ],
+            [
+                'column' => 'ward_id',
+                'value' => $wardId
+            ],
 
-        if (isset($searchOption['district_id'])) {
 
-        } else {
+        ];
+        $data = Post::where('is_delete', 0)->where('in_duration', 1)->SearchPost($arrSearch)->where('is_booked', 0)->limit(10)->orderBy('service_id', 'desc')->get();
+//         $data = Post::where('is_delete', 0)->where('in_duration', 1)->SearchByCategory($categoryId)->where('is_booked', 0)->limit(10)->orderBy('service_id', 'desc')->get();
 
-        }
-
-        if (isset($searchOption['ward_id'])) {
-
-        } else {
-
-        }
-
-        if (isset($searchOption['street_id'])) {
-
-        } else {
-
-        }
-
-        if (isset($searchOption['price_form'])) {
-
-        } else {
-
-        }
-        if (isset($searchOption['price_to'])) {
-
-        } else {
-
-        }
-
-//        if (isset())
-
-        //search by area
+        return view('pages.test', ['data' => $data]);
     }
 
-    public function index () {
-//        $post = Post::where('is_public', 1);
-
-
-    }
 
     function create () {
         $request = '';
@@ -88,15 +80,5 @@ class PostController extends Controller
         // return Thao tac thanh cong
     }
 
-    public function show () {
 
-    }
-
-    function  update () {
-        // update status,
-        // update content
-    }
-    function destroy () {
-
-    }
 }

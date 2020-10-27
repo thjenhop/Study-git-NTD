@@ -22,7 +22,7 @@ $factory->define(Post::class, function (Faker $faker) {
         'area' => rand(10, 1000),
         'gender_user' => $genderUser[rand(0, 2)],
         'is_public' => rand(0, 1),
-        'is_book' => rand(0, 1),
+        'is_booked' => rand(0, 1),
         'is_delete' => rand(0, 1),
         'in_duration' => rand(0, 1),
         'status' => $postStatus[rand(0, 2)],
