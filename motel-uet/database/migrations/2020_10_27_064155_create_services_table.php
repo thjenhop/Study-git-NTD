@@ -20,6 +20,7 @@ class CreateServicesTable extends Migration
             $table->unsignedDouble('price_each_week', 10, 2)->nullable(false);
             $table->unsignedDouble('price_each_month', 10, 2)->nullable(false);
             $table->unsignedInteger('min_post_up')->nullable(false);
+            $table->text('description')->nullable();
             $table->jsonb('list_img')->nullable();
             $table->timestamps();
         });

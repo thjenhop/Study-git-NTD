@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
          $this->call([
              GroupUserSeeder::class,
              CategoriesSeeder::class,
+             ServiceSeeder::class
 //             FakeUserSeeder::class,
          ]);
     }
