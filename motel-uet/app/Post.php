@@ -10,6 +10,17 @@ class Post extends Model
 
     protected $guarded = [];
 
+    public static  $POST_STATUS = [
+        'approved' => 'Approved',
+        'pending' => 'Pending',
+        'denied' => 'Denied'
+    ];
+
+    public static $USER_TYPE = [
+      'male' => 'Male',
+      'female' => 'Female',
+      'none' => 'None'
+    ];
     public function scopeSearchPost ($query, $arrSearch)
     {
         for ($i = 0; $i < count($arrSearch); $i++) {

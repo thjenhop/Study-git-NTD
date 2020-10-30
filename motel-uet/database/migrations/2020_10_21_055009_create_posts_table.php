@@ -15,6 +15,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('category_id')->nullable(false);
             $table->string('title')->nullable(false)->comment('Tên bài viết');
             $table->longText('description')->nullable(false)->comment('Mô tả bài viết');
             $table->unsignedBigInteger('province_id')->nullable(false);
@@ -33,9 +34,9 @@ class CreatePostsTable extends Migration
             $table->string('close_time')->comment('Thời gian đóng cửa');
             $table->string('deposit')->comment('Đặt cọc');
             $table->boolean('is_public');
-            $table->boolean('is_booked');
-            $table->boolean('is_delete');
-            $table->boolean('in_duration')->comment('Còn hạn hay không');
+            $table->boolean('is_booked')->default(0);
+            $table->boolean('is_delete')->default(0);
+            $table->boolean('in_duration')->comment('Còn hạn hay không')->default(1);
             $table->string('status')->comment('Trạng thái bài biết __ Approved - Pending - Denied');
             $table->unsignedBigInteger('creator_id');
             $table->unsignedBigInteger('processor_id')->comment('Người xử lý');
