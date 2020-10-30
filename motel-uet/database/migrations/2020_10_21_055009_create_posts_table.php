@@ -13,28 +13,25 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $test = true;
-            $table->unsignedInteger('category_id')->comment('Mã loại bài viết');
             $table->string('title')->nullable(false)->comment('Tên bài viết');
             $table->longText('description')->nullable(false)->comment('Mô tả bài viết');
             $table->unsignedBigInteger('province_id')->nullable(false);
             $table->unsignedBigInteger('district_id')->nullable(false);
             $table->unsignedBigInteger('street_id')->nullable(false);
             $table->unsignedBigInteger('ward_id')->nullable(false);
-            $table->string('address')->nullable($test);
-            $table->decimal('price', 15, 3)->nullable(false);
+            $table->string('address')->nullable(false);
+            $table->decimal('price', 15, 3);
             $table->double('area', 10, 2)->nullable(false);
-            $table->string('gender_user')->nullable($test)->comment('Male - Female - None');
-//            $table->string('user_type')->nullable(false)->comment('Student - Household - Worker');
-//            $table->decimal('electric_price', 10, 3)->nullable(false);
-//            $table->string('electric_calculate_method')->nullable(false)->comment('Personal - Kwh - Negotiate __ thương lượng');
-//            $table->decimal('water_price', 10, 3)->nullable(false);
-//            $table->string('water_calculate_method')->nullable(false)->comment('Personal - m3 - Negotiate __ thương lượng');
-//            $table->string('close_time')->comment('Thời gian đóng cửa');
-//            $table->string('deposit')->comment('Đặt cọc');
+            $table->string('gender_user')->nullable(false)->comment('Male - Female - None');
+            $table->string('user_type')->nullable(false)->comment('Student - Household - Worker');
+            $table->decimal('electric_price', 10, 3)->nullable(false);
+            $table->string('electric_calculate_method')->nullable(false)->comment('Personal - Kwh - Negotiate __ thương lượng');
+            $table->decimal('water_price', 10, 3)->nullable(false);
+            $table->string('water_calculate_method')->nullable(false)->comment('Personal - m3 - Negotiate __ thương lượng');
+            $table->string('close_time')->comment('Thời gian đóng cửa');
+            $table->string('deposit')->comment('Đặt cọc');
             $table->boolean('is_public');
             $table->boolean('is_booked');
             $table->boolean('is_delete');
